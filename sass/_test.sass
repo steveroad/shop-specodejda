@@ -1,0 +1,84 @@
+.main
+  background: #EDEDED
+  padding-bottom: 270px
+  &-block
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    padding-left: 90px
+    & a
+      color: #1B1464
+      background: #FBB03B
+      padding: 15px 25px
+      border-radius: 15px
+      &:hover
+        background: #EDEDED
+        border: 1px solid #fbb03b
+        color: #aeaeae
+  &-title
+    font-size: 50px
+    font-weight: 400
+    padding-bottom: 53px
+    color: #707070
+    &_form
+  &-form
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    &_question
+      font-size: 15px
+      font-weight: 400
+    &_name
+      padding: 12px 150px 12px 20px
+      margin-bottom: 20px
+      color: #afafaf
+      font-size: 14px
+      font-weight: 400
+      &::placeholder
+        color: #afafaf
+    &_phone
+      padding: 12px 150px 12px 20px
+      margin-bottom: 20px
+      color: #afafaf
+      font-size: 14px
+      font-weight: 400
+      &::placeholder
+        color: #afafaf
+    & input[type=checkbox]
+      display: none
+    & input[type=checkbox] + label
+      display: block
+      position: relative
+      margin: 12px 0px 12px 30px
+      cursor: pointer
+      font-size: 16px
+      line-height: 20px
+      color: #333333
+    & input[type=checkbox] + label:hover
+      color:#337AB7
+    & input[type=checkbox] + label:before
+      position: absolute
+      content: ''
+      width: 22px
+      height: 22px
+      line-height: 22px
+      left: -30px
+      border: 1px solid #808080
+    & input[type=checkbox]:checked + label:before
+      content: '\2714'
+      color: #337AB7
+      font-size: 14px
+      text-align: center
+      font-weight: bold
+      border: 1px solid #337AB7
+    & input[type=submit]
+      padding: 14px 22px
+      font-size: 20px
+      font-weight: 400
+      color: #707070
+      background: #fff
+    & input[type=submit]:hover
+      background: #fbb03b
+    & input[disabled]
+      opacity: 0.6
+      cursor: not-allowed

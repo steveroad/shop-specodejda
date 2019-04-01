@@ -1,0 +1,93 @@
+.footer
+  padding-top: 60px
+  padding-bottom: 63px
+  background: #aeaeae
+  &-block_form
+    display: flex
+    flex-direction: column
+  &-block_img
+    padding-bottom: 34px
+  &-block_information
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+  &-form
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    &_description
+      margin: 0
+      color: #ffffff
+      font-size: 24px
+      font-weight: 400
+    &_text
+      color: #ffffff
+      font-size: 20px
+      font-weight: 400
+      padding-bottom: 16px
+    &_name
+      padding: 12px 150px 12px 20px
+      margin-bottom: 20px
+      color: #afafaf
+      font-size: 14px
+      font-weight: 400
+      margin-bottom: 20px
+      &::placeholder
+        color: #afafaf
+    &_phone
+      padding: 12px 150px 12px 20px
+      margin-bottom: 20px
+      color: #afafaf
+      font-size: 14px
+      font-weight: 400
+      &::placeholder
+        color: #afafaf
+    & input[type=checkbox]
+      display: none
+    & input[type=checkbox] + label
+      display: block
+      position: relative
+      margin: 12px 0px 12px 30px
+      cursor: pointer
+      font-size: 16px
+      line-height: 20px
+      color: #333333
+    & input[type=checkbox] + label:hover
+      color:#337AB7
+    & input[type=checkbox] + label:before
+      position: absolute
+      content: ''
+      width: 22px
+      height: 22px
+      line-height: 22px
+      left: -30px
+      border: 1px solid #808080
+    & input[type=checkbox]:checked + label:before
+      content: '\2714'
+      color: #337AB7
+      font-size: 14px
+      text-align: center
+      font-weight: bold
+      border: 1px solid #337AB7
+    & input[type=submit]
+      padding: 14px 22px
+      font-size: 20px
+      font-weight: 400
+      color: #707070
+      background: #fff
+    & input[type=submit]:hover
+      background: #fbb03b
+    & input[disabled]
+      opacity: 0.6
+      cursor: not-allowed
+  &-addres
+    color: #ffffff
+    font-size: 20px
+    font-style: italic
+    padding-bottom: 15px
+  &-info
+    font-style: italic
+    font-size: 18px
+    & a
+      color: #fff
+      padding-left: 15px
