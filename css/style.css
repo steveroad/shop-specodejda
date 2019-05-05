@@ -585,6 +585,27 @@ input:focus {
      object-fit: contain;
 }
 
+.products-list_ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.products-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.products-page_block {
+  width: 33%;
+}
+
 .testing {
   height: 100vh;
   background: #EDEDED;
