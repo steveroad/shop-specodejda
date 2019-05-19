@@ -128,7 +128,7 @@
     -webkit-text-fill-color: transparent
     padding: 0
     animation: city 1s ease
-  & p
+  & .products-page
     color: #686868
     margin: 0
     padding: 0
@@ -161,4 +161,25 @@
 .products
   &-page
     display: flex
-    justify-content: space-between
+    justify-content: space-around
+    &_block
+      background-color: #707070
+      width: 169px
+      border-radius: 10px
+      border: 1px solid #707070
+    &_img
+      display: flex
+      justify-content: center
+      &__photo
+        width: 117px
+        height: 94px
+    &-title
+      text-align: center
+      background-color: #fff
+      color: #707070
+      margin: 0
+      font-size: 18px
+      border-bottom-left-radius: 10px
+      border-bottom-right-radius: 10px
+.photo
+  object-fit: contain
