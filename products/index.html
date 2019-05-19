@@ -6,19 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Спецодежда Кемерово</title>
 
-  <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16" data-mce-href="/favicon-16x16.png">
-  <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32" data-mce-href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png" data-mce-href="/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-touch-icon-60x60.png" data-mce-href="/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png" data-mce-href="/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-touch-icon-76x76.png" data-mce-href="/apple-touch-icon-76x76.png">
-  <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" data-mce-href="/favicon-96x96.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png" data-mce-href="/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-touch-icon-120x120.png" data-mce-href="/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png" data-mce-href="/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png" data-mce-href="/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png" data-mce-href="/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="img/favicon/android-chrome-192x192.png" sizes="192x192" data-mce-href="/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" href="../img/favicon/favicon-16x16.png" sizes="16x16" data-mce-href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" href="../img/favicon/favicon-32x32.png" sizes="32x32" data-mce-href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-touch-icon-57x57.png" data-mce-href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-touch-icon-60x60.png" data-mce-href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-touch-icon-72x72.png" data-mce-href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-touch-icon-76x76.png" data-mce-href="/apple-touch-icon-76x76.png">
+  <link rel="icon" type="image/png" href="../img/favicon/favicon-96x96.png" sizes="96x96" data-mce-href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-touch-icon-114x114.png" data-mce-href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-touch-icon-120x120.png" data-mce-href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../img/favicon/apple-touch-icon-144x144.png" data-mce-href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-touch-icon-152x152.png" data-mce-href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon-180x180.png" data-mce-href="/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../img/favicon/android-chrome-192x192.png" sizes="192x192" data-mce-href="/android-chrome-192x192.png">
 
   <link href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
@@ -41,7 +41,7 @@
             <li class="header-list_1"><a href="../index.html">Главная</a></li>
             <li class="header-list_2"><a href="../catalog/index.html">Каталог</a></li>
             <li class="header-list_3"><a href="../index.html#location">Как нас найти</a></li>
-            <li class="header-list_4"><a href="#location">Консультация</a></li>
+            <li class="header-list_4"><a href="">Заявка</a></li>
           </ul>
         </div>
         <div class="col-3">
@@ -56,26 +56,81 @@
     </div>
   </header>
 
+  <section class="request">
+    <div class="popup">
+      <div class="popup-close">&times;</div>
+        <form action="../mail.php" method="POST" class="request-form">
+          <div class="request-form-title">
+            Если у вас есть индивидуальный заказ, просьба оставить
+            заявку, и мы вам перезвоним!
+            <label for="phone" class="request-form-label">
+              Введите ваш номер телефона:
+            </label>
+            <input type="tel" class="request-form-input" minlength="11" maxlength="12" name="phone" required placeholder="+7 ХХХ ХХХ ХХ ХХ">
+            <label for="name" class="request-form-label">
+              Введите вше имя:
+            </label>
+            <input type="text" class="request-form-input" name="name" required placeholder="Ваше имя">
+            <label for="title" class="request-form-label">
+              Введите название товара:
+            </label>
+            <input type="text" class="request-form-input" name="title" required placeholder="Название товара">
+            <label for="cloth" class="request-form-label">
+              Выберете ткань:
+            </label>
+            <select class="request-form-input" name="cloth">
+              <option class="request-form-input_select" selected disabled hidden value="">Выберите ткань</option>
+              <option value="Бязь">Бязь</option>
+              <option value="Смесовая">Смесовая</option>
+              <option value="Габардин">Габардин</option>
+              <option value="Плащевая">Плащевая</option>
+              <option value="Смесовая">Смесовая</option>
+            </select>
+            <label for="description" class="request-form-label">
+              Введите описание заказа:
+            </label>
+            <textarea name="description" class="request-form-text" cols="30" rows="2" placeholder="Описание товара"></textarea>
+            <div class="request-form-agreement">
+              <input id="go" type="checkbox" name="go" onchange="document.getElementById('go-submit').disabled = !this.checked;">
+              <label for="go">Согляшение на обработку данных</label>
+            </div>
+            <input type="submit" disabled="disabled" name="go-submit" id="go-submit" value="Оставить заявку" /></div>
+        </form>
+    </div>
+  </section>
+
   <section class="products">
     <div class="container">
       <div class="row">
         <div class="col-12">
           <!-- Tab links -->
           <div class="tabs">
-            <button class="tablinks active" data-country="Халаты"><p data-title="Халаты">Халаты</p></button>
-            <button class="tablinks" data-country="Фартуки"><p data-title="Фартуки">Фартуки</p></button>
-            <button class="tablinks" data-country="Костюмы"><p data-title="Костюмы">Костюмы</p></button>
-            <button class="tablinks" data-country="Жилеты"><p data-title="Жилеты">Жилеты</p></button>
-            <button class="tablinks" data-country="Куртки"><p data-title="Куртки">Куртки</p></button>
-            <button class="tablinks" data-country="Рукавицы"><p data-title="Рукавицы">Рукавицы</p></button>
-            <button class="tablinks" data-country="Головные уборы"><p data-title="Головные уборы">Головные уборы</p></button>
-            <button class="tablinks" data-country="Прочее"><p data-title="Прочее">Прочее</p></button>
+            <button class="tablinks active" data-country="bathrobes"><p data-title="Халаты">Халаты</p></button>
+            <button class="tablinks" data-country="aprons"><p data-title="Фартуки">Фартуки</p></button>
+            <button class="tablinks" data-country="costumes"><p data-title="Костюмы">Костюмы</p></button>
+            <button class="tablinks" data-country="vests"><p data-title="Жилеты">Жилеты</p></button>
+            <button class="tablinks" data-country="jackets"><p data-title="Куртки">Куртки</p></button>
+            <button class="tablinks" data-country="mittens"><p data-title="Рукавицы">Рукавицы</p></button>
+            <button class="tablinks" data-country="hats"><p data-title="Головные уборы">Головные уборы</p></button>
+            <button class="tablinks" data-country="other"><p data-title="Прочее">Прочее</p></button>
           </div>
           <!-- Tab content -->
           <div class="wrapper_tabcontent">
             <div id="bathrobes" class="tabcontent active">
-              <h3>Халаты</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor omnis sequi delectus reprehenderit odio molestias quasi tenetur eius, maiores commodi id rerum? Quaerat quos expedita consectetur modi odit sunt nobis, nisi minima. Deserunt dolore dolor fuga ea ratione ipsa sit adipisci, cum nostrum, ullam, id distinctio explicabo? At, aperiam iusto.</p>
+              <!-- Халаты -->
+              <div class="products-page">
+                <div class="products-page_block">
+                  Будет товар
+                </div>
+
+                <div class="products-page_block">
+                  Будет товар
+                </div>
+
+                <div class="products-page_block">
+                  Будет товар
+                </div>
+              </div>
             </div>
 
             <div id="aprons" class="tabcontent">
@@ -157,5 +212,7 @@
   </footer>
 
   <script src="../js/script.js"></script>
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/requsest.js"></script>
 </body>
 </html>
