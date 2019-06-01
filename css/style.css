@@ -765,12 +765,12 @@ input:focus {
 
 .tabcontent h3 {
   font-size: 40px;
-  top: 75px;
+  top: 50%;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   position: absolute;
   left: -90px;
-  opacity: 0.1;
+  opacity: 0.3;
   width: 200px;
   height: 60px;
   background: -webkit-linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -888,7 +888,7 @@ input:focus {
   height: 94px;
 }
 
-.products-page-title {
+.products-page_description {
   text-align: center;
   background-color: #fff;
   color: #707070;
@@ -905,12 +905,28 @@ input:focus {
 
 .request {
   position: fixed;
+  display: none;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
-  z-index: 3;
+  z-index: 10;
+}
+
+.request-btn {
+  border: 1px solid #707070;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #707070;
+  margin-left: 20px;
+  background-color: transparent;
+}
+
+.request-btn:hover {
+  background-color: #aeaeae;
+  color: #1B1464;
 }
 
 .request-form {
@@ -1087,5 +1103,9 @@ input:focus {
 .testing {
   height: 100vh;
   background: #EDEDED;
+}
+
+button:focus {
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */

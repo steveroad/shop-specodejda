@@ -41,7 +41,7 @@
             <li class="header-list_1"><a href="../index.html">Главная</a></li>
             <li class="header-list_2"><a href="../catalog/index.html">Каталог</a></li>
             <li class="header-list_3"><a href="../index.html#location">Как нас найти</a></li>
-            <li class="header-list_4"><a href="">Заявка</a></li>
+            <li class="header-list_4"><button class="request-btn">заявка</button></li>
           </ul>
         </div>
         <div class="col-3">
@@ -59,43 +59,45 @@
   <section class="request">
     <div class="popup">
       <div class="popup-close">&times;</div>
-        <form action="../mail.php" method="POST" class="request-form">
-          <div class="request-form-title">
-            Если у вас есть индивидуальный заказ, просьба оставить
-            заявку, и мы вам перезвоним!
-            <label for="phone" class="request-form-label">
-              Введите ваш номер телефона:
-            </label>
-            <input type="tel" class="request-form-input" minlength="11" maxlength="12" name="phone" required placeholder="+7 ХХХ ХХХ ХХ ХХ">
-            <label for="name" class="request-form-label">
-              Введите вше имя:
-            </label>
-            <input type="text" class="request-form-input" name="name" required placeholder="Ваше имя">
-            <label for="title" class="request-form-label">
-              Введите название товара:
-            </label>
-            <input type="text" class="request-form-input" name="title" required placeholder="Название товара">
-            <label for="cloth" class="request-form-label">
-              Выберете ткань:
-            </label>
-            <select class="request-form-input" name="cloth">
-              <option class="request-form-input_select" selected disabled hidden value="">Выберите ткань</option>
-              <option value="Бязь">Бязь</option>
-              <option value="Смесовая">Смесовая</option>
-              <option value="Габардин">Габардин</option>
-              <option value="Плащевая">Плащевая</option>
-              <option value="Смесовая">Смесовая</option>
-            </select>
-            <label for="description" class="request-form-label">
-              Введите описание заказа:
-            </label>
-            <textarea name="description" class="request-form-text" cols="30" rows="2" placeholder="Описание товара"></textarea>
-            <div class="request-form-agreement">
-              <input id="go" type="checkbox" name="go" onchange="document.getElementById('go-submit').disabled = !this.checked;">
-              <label for="go">Согляшение на обработку данных</label>
-            </div>
-            <input type="submit" disabled="disabled" name="go-submit" id="go-submit" value="Оставить заявку" /></div>
-        </form>
+        <div class="popup-form">
+          <form action="../mail.php" method="POST" class="request-form">
+            <div class="request-form-title">
+              Если у вас есть индивидуальный заказ, просьба оставить
+              заявку, и мы вам перезвоним!
+              <label for="phone" class="request-form-label">
+                Введите ваш номер телефона:
+              </label>
+              <input type="tel" class="request-form-input" minlength="11" maxlength="12" name="phone" required placeholder="+7 ХХХ ХХХ ХХ ХХ">
+              <label for="name" class="request-form-label">
+                Введите вше имя:
+              </label>
+              <input type="text" class="request-form-input" name="name" required placeholder="Ваше имя">
+              <label for="title" class="request-form-label">
+                Введите название товара:
+              </label>
+              <input type="text" class="request-form-input" name="title" required placeholder="Название товара">
+              <label for="cloth" class="request-form-label">
+                Выберете ткань:
+              </label>
+              <select class="request-form-input" name="cloth">
+                <option class="request-form-input_select" selected disabled hidden value="">Выберите ткань</option>
+                <option value="Бязь">Бязь</option>
+                <option value="Смесовая">Смесовая</option>
+                <option value="Габардин">Габардин</option>
+                <option value="Плащевая">Плащевая</option>
+                <option value="Смесовая">Смесовая</option>
+              </select>
+              <label for="description" class="request-form-label">
+                Введите описание заказа:
+              </label>
+              <textarea name="description" class="request-form-text" cols="30" rows="2" placeholder="Описание товара"></textarea>
+              <div class="request-form-agreement">
+                <input id="go" type="checkbox" name="go" onchange="document.getElementById('go-submit').disabled = !this.checked;">
+                <label for="go">Согляшение на обработку данных</label>
+              </div>
+              <input type="submit" disabled="disabled" name="go-submit" id="go-submit" value="Оставить заявку" /></div>
+          </form>
+        </div>
     </div>
   </section>
 
@@ -118,12 +120,13 @@
           <div class="wrapper_tabcontent">
             <div id="bathrobes" class="tabcontent active">
               <!-- Халаты -->
+              <h3>Халаты</h3>
               <div class="products-page">
                 <div class="products-page_block">
                     <div class="products-page_img">
                       <img class="products-page_img__photo photo" src="../img/catalog/different.png" alt="different">
                     </div>
-                    <p class="products-page-title">Сигнальный костюм</p>
+                    <div class="products-page_description">asd</div>
                 </div>
 
                 <div class="products-page_block">

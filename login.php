@@ -8,6 +8,8 @@ if ($_POST['login']) {
     $_SESSION['login'] = $_POST['login'];
     $_SESSION['password'] = $_POST['password'];
     header ('Location: admin.php');
+    } else {
+      echo "<h1 style='color: red'>Неправильный логин или пароль</h1>";
     }
   }
 }
@@ -35,5 +37,5 @@ if ($_POST['login']) {
 <form method="POST">
   <input type="text" name="login" placeholder="Логин" required>
   <input type="password" name="password" placeholder="Пароль" required>
-  <button>Отправить</button>
+  <button>Войти</button>
 </form>
