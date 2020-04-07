@@ -1,0 +1,105 @@
+@media (max-width: 1200px)
+    .header
+        &-list
+            font-size: 19px
+            flex-wrap: wrap
+            &_4
+                padding-top: 10px
+    .main
+        &-title
+            font-size: 45px
+    .advantage
+        padding-top: 50px
+        padding-bottom: 61px
+        &-blocks
+            &-left
+                justify-content: center
+            &-center
+                justify-content: center
+            &-right
+                justify-content: center
+@media (max-width: 992px)
+    .mobi-menu
+        display: block
+    .header
+        &-logo
+            display: flex
+            justify-content: center
+            padding-bottom: 10px
+        &-list
+            max-height: 0
+            background: white
+            display: flex
+            flex-direction: column
+            justify-content: center
+            background-color: #EDEDED
+            position: absolute
+            overflow: hidden
+            top: 63px
+            right: 0
+            left: 0
+            margin: 0
+            padding: 0
+            z-index: 3
+            & li
+                display: block
+                text-align: center
+            &_4
+                & a
+                    border: none
+                    color: #000
+        &-block_contacts
+            justify-content: center
+            &__info
+                align-items: center
+                & a
+                    padding: 0px 15px
+    .main
+        &-block
+            padding-bottom: 30px
+            align-items: center
+            padding-left: 0
+            text-align: center
+        &-form
+            align-items: center
+    .arrow
+        display: none
+    .footer
+        &-block
+            &_form
+                align-items: center
+                padding-bottom: 30px
+            &_information
+                align-items: center
+        &-form
+            align-items: center
+        &-map
+            display: flex
+            justify-content: center
+@media (max-width: 576px)
+    .header
+        &-list
+            flex-direction: column
+        &-block_contacts
+            &__info
+                flex-direction: column
+                align-items: center
+    .main
+        &-title
+            font-size: 30px
+        &-form
+            &_name
+                padding: 12px 100px 12px 20px
+            &_phone
+                padding: 12px 100px 12px 20px
+    .footer
+        &-form
+            &_description
+                text-align: center
+                padding-bottom: 10px
+            &_name
+                padding: 12px 100px 12px 20px
+            &_phone
+                padding: 12px 100px 12px 20px
+        &-info
+            text-align: center

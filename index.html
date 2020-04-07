@@ -33,19 +33,20 @@
     <header class="header">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-3">
+          <div class="col-xl-3 col-lg-4 col-12">
             <div class="header-logo">
               <a href=""><img class="header-logo_img" src="img/header/logo.png" alt="logo"></a>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-xl-6 col-lg-5 col-12">
             <ul class="header-list">
               <li class="header-list_1"><a href="index.html">Главная</a></li>
               <li class="header-list_2"><a href="catalog/index.html">Каталог</a></li>
               <li class="header-list_3"><a href="#location">Как нас найти</a></li>
             </ul>
+            <div class="mobi-menu"><span></span></div>
           </div>
-          <div class="col-3">
+          <div class="col-xl-3 col-lg-3 col-12">
             <div class="header-block_contacts">
               <div class="header-block_contacts__info">
                 <a href="">+7-800-555-35-35</a>
@@ -60,13 +61,13 @@
     <section class="main">
       <div class="container">
         <div class="row">
-          <div class="col-7">
+          <div class="col-xl-7 col-lg-7 col-12">
             <div class="main-block">
               <h1 class="main-title">Спецодежда от производителя из высококачественных материалов</h1>
               <a href="#">Посмотреть каталог</a>
             </div>
           </div>
-          <div class="col-5">
+          <div class="col-xl-5 col-lg-5 col-12">
             <div class="main-block_form">
               <form class="main-form" action="#">
                 <p class="main-form_question">Есть вопросы? Напишите нам!</p>
@@ -101,7 +102,7 @@
   <section id="1" class="advantage">
     <div class="container">
       <div class="row">
-        <div class="col-4">
+        <div class="col-xl-4">
           <div class="advantage-blocks-left">
           <div class="advantage-block">
             <div class="advantage-block_img">
@@ -113,7 +114,7 @@
           </div>
         </div>
       </div>
-        <div class="col-4">
+        <div class="col-xl-4">
             <div class="advantage-blocks-center">
           <div class="advantage-block">
             <div class="advantage-block_img">
@@ -125,7 +126,7 @@
           </div>
         </div>
       </div>
-        <div class="col-4">
+        <div class="col-xl-4">
             <div class="advantage-blocks-right">
           <div class="advantage-block">
             <div class="advantage-block_img">
@@ -140,7 +141,7 @@
     </div>
 
       <div class="row">
-        <div class="col-4">
+        <div class="col-xl-4">
             <div class="advantage-blocks-left">
           <div class="advantage-block">
             <div class="advantage-block_img">
@@ -152,7 +153,7 @@
           </div>
         </div>
       </div>
-        <div class="col-4">
+        <div class="col-xl-4">
             <div class="advantage-blocks-center">
           <div class="advantage-block">
             <div class="advantage-block_img">
@@ -164,7 +165,7 @@
           </div>
         </div>
       </div>
-        <div class="col-4">
+        <div class="col-xl-4">
           <div class="advantage-blocks-right">
           <div class="advantage-block">
             <div class="advantage-block_img">
@@ -183,7 +184,7 @@
   <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-6">
+        <div class="col-xl-6 col-lg-5 col-12">
           <div class="footer-block_form">
             <div class="footer-block_img">
               <img src="img/footer/logo.png" alt="logo">
@@ -199,7 +200,7 @@
             </form>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-xl-6 col-lg-7 col-12">
           <div id="location" class="footer-block_information">
             <div class="footer-map">
               <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aee529ad26e15c899ae1fd1e8dcf38a34dd3d957640e740f641dbeb16b5ec72e4&amp;width=560&amp;height=270&amp;lang=ru_RU&amp;scroll=false"></script>
@@ -216,6 +217,17 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    let nav = document.querySelector(".mobi-menu");
+    let menu = document.querySelector(".header-list");
+
+    function list(){
+      menu.classList.toggle('active');
+    };
+
+    nav.onclick = list;
+  </script>
 
 </body>
 </html>

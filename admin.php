@@ -42,6 +42,20 @@ if (count($_POST) > 0) {
   }
   label {
     color: #BDBDBD;
+    padding-top: 10px;
+  }
+  input {
+    margin-top: 10px;
+  }
+  input[type=submit] {
+    padding-top: 0;
+    margin-top: 10;
+  }
+  input[type=file] {
+    color: #FFC107;
+  }
+  select {
+    margin-top: 10;
   }
   * {
     font-size: 30px;
@@ -70,6 +84,8 @@ define("DB_PASS", "");
 $connection = new PDO ('mysql: host=localhost; dbname=shop; charset=utf8', 'root', '');
 $db_categories = $connection->query('SELECT * FROM `categories`');
 $db_cloth = $connection->query('SELECT * FROM `cloth`');
+$db_product = $connection->query('SELECT * FROM `product`');
+$db_img = $connection->query('SELECT * FROM `img`');
 
 //Добавление категории
 if ($_POST['category_add']) {
@@ -81,6 +97,46 @@ if ($_POST['category_add']) {
 if ($_POST['cloth_title_add']) {
   $cloth_title = htmlspecialchars($_POST['cloth_title_add']);
   $connection->query("INSERT INTO `cloth` (`cloth_title`) VALUES ('$cloth_title')");
+}
+
+//Добавление товара
+if (isset($_POST['product_title_add'])) {
+  $fileName = $_FILES['product_picture_add']['name'];
+  $fileTmpName = $_FILES['product_picture_add']['tmp_name'];
+  $fileType = $_FILES['product_picture_add']['type'];
+  $fileError = $_FILES['product_picture_add']['error'];
+  $fileSize = $_FILES['product_picture_add']['size'];
+
+  $fileExtension = strtolower(end(explode('.', $fileName)));
+  $fileName = explode('.', $fileName)[0];
+  $fileName = preg_replace('/[0-9]/', '', $fileName);
+  $allowedExtensions = ['jpg', 'jpeg', 'png'];
+
+  $product_title = htmlspecialchars($_POST['product_title_add']);
+  $product_description = htmlspecialchars($_POST['product_description_add']);
+  $product_size = htmlspecialchars($_POST['product_size_add']);
+  $product_category = htmlspecialchars($_POST['product_category_add']);
+  $product_cloth = htmlspecialchars($_POST['product_cloth_add']);
+  if (in_array($fileExtension, $allowedExtensions)) {
+    if ($fileSize < 5000000) {
+      if ($fileError === 0) {
+        $connection->query("INSERT INTO `product` (`title`, `description`, `size`, `picture`, `extension`, `id_category`, `id_cloth`) VALUES ('$product_title', '$product_description', '$product_size', '$fileName', '$fileExtension', '$product_category', '$product_cloth')");
+        $lastID = $connection->query("SELECT MAX(id) FROM `product`");
+        $lastID = $lastID->fetchAll();
+        $lastID = $lastID[0][0];
+        $fileNameNew = $lastID . $fileName . '.' . $fileExtension;
+        $fileDestination = 'uploads/' . $fileNameNew;
+        move_uploaded_file($fileTmpName, $fileDestination);
+        echo 'Успех';
+      } else {
+        echo 'Что-то пошло не так';
+      }
+    } else {
+      echo 'Слишком большой размер файла';
+    }
+  } else {
+    echo 'Неверный тип файла';
+  }
 }
 ?>
   <!--  Работа с категориями -->
@@ -222,6 +278,108 @@ if ($_POST['cloth_title_add']) {
     mysqli_set_charset($db_connection, "utf8"); 
     $delz=$_POST['cloth_del'];
     $query = "DELETE FROM cloth WHERE (id='".$delz."')"; 
+    $result = mysqli_query($db_connection, $query) 
+    or die(mysqli_error($db_connection)); 
+    ?>
+    <input type="submit"  value="Удалить">
+  </form>
+
+  <hr>
+  <span>Работа с товаром</span>
+  <hr>
+
+  <!--  Работа с товаром -->
+  <!--  Добавление -->
+  <form method="POST" enctype="multipart/form-data">
+    <p>Добавление товара</p>
+    <label for="product_title_add">Название товара:</label>
+    <input type="text" name="product_title_add"  placeholder="Название товара">
+
+    <label for="product_description_add">Описание товара:</label>
+    <input type="text" name="product_description_add"  placeholder="Описание товара">
+
+    <label for="product_size_add">Размер товара:</label>
+    <input type="text" name="product_size_add"  placeholder="Размер товара">
+
+    <label for="product_picture_add">Изображение товара:</label>
+    <input type="file" name="product_picture_add"  placeholder="Изображение товара">
+
+    <label for="product_category_add">Категория товара</label>
+    <select name="product_category_add" id="product_category_add"
+    <?php
+    $db_connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME); 
+    mysqli_set_charset($db_connection, "utf8"); 
+    $sql = ("SELECT * FROM categories"); 
+    $result = mysqli_query($db_connection, $sql) 
+    or die(mysqli_error($db_connection)); 
+    echo "<select name='product_category_add'>";
+    while($row = mysqli_fetch_row($result)){
+    echo "<option value='".$row[0]."'> $row[1] </option>"; 
+    } 
+    echo "</select>";
+    ?>
+    </select>
+
+    <label for="product_cloth_add">Название ткани</label>
+    <select name="product_cloth_add" id="product_cloth_add"
+    <?php
+    $db_connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME); 
+    mysqli_set_charset($db_connection, "utf8"); 
+    $sql = ("SELECT * FROM cloth"); 
+    $result = mysqli_query($db_connection, $sql) 
+    or die(mysqli_error($db_connection)); 
+    echo "<select name='product_cloth_add'>";
+    while($row = mysqli_fetch_row($result)){
+    echo "<option value='".$row[0]."'> $row[1] </option>"; 
+    } 
+    echo "</select>";
+    ?>
+    </select>
+
+    <input type="submit" value="Добавить">
+  </form>
+
+  <!--  Удаление -->
+  <form method="POST" action="">
+    <p>Удаление товара</p>
+
+    <label for="category_c">Название категории</label>
+    <select name="category_c" id="category_c"
+    <?php
+    $db_connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME); 
+    mysqli_set_charset($db_connection, "utf8"); 
+    $sql = ("SELECT * FROM categories"); 
+    $result = mysqli_query($db_connection, $sql) 
+    or die(mysqli_error($db_connection)); 
+    echo "<select name='category_c'>";
+    while($row = mysqli_fetch_row($result)){
+    echo "<option value='".$row[0]."'> $row[1] </option>"; 
+    } 
+    echo "</select>";
+    ?>
+    </select>
+
+    <label for="product_del">Название товара</label>
+    <select name="product_del" id="product_del"
+    <?php
+    $db_connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME); 
+    mysqli_set_charset($db_connection, "utf8"); 
+    $sql = ("SELECT * FROM product"); 
+    $result = mysqli_query($db_connection, $sql) 
+    or die(mysqli_error($db_connection)); 
+    echo "<select name='product_del'>";
+    while($row = mysqli_fetch_row($result)){
+    echo "<option value='".$row[0]."'> $row[1] </option>"; 
+    } 
+    echo "</select>";
+    ?>
+    </select>
+
+    <?php 
+    $db_connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME); 
+    mysqli_set_charset($db_connection, "utf8"); 
+    $delz=$_POST['product_del'];
+    $query = "DELETE FROM product WHERE (id='".$delz."')"; 
     $result = mysqli_query($db_connection, $query) 
     or die(mysqli_error($db_connection)); 
     ?>
